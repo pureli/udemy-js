@@ -1,1 +1,1 @@
-alert("hello World!!");
+document.getElementById("article3").textContent = "哈囉";

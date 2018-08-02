@@ -1,23 +1,35 @@
-// 加總練習
-function count(oneNum,twoNum){
-    var total = oneNum + twoNum;
-    console.log('總價格為:'+total+'元');
+// 按鈕計算總價功能
+
+// 第一種做法
+// document.getElementById("calculate_button").onclick = calculator;
+// function calculator (){
+//     var hambergerNum;
+//     hambergerNum = document.getElementById('hamberger').value;
+
+//     var colaNum;
+//     colaNum = document.getElementById('cola').value;
+
+//     var total;
+//     total = hambergerNum*80 + colaNum*30;
+    
+//     document.getElementById('totalPrice').textContent = total;
+    
+// }
+
+// 第二種做法
+// 1.讓按鈕綁定事件
+document.getElementById('calculate_button').onclick = function () {
+   // 2.指定價錢
+    var hamPrice = 80;
+    var colaPrice = 30;
+
+   // 3.撈出表單元素中的欄位裡面的內容(value)，並乘以價錢
+   var hambergerNum = parseInt(document.getElementById('hamberger').value)*hamPrice;
+   var colaNum = parseInt(document.getElementById('cola').value)*colaPrice; 
+
+   // 4.計算出並顯示在總價欄位上
+   document.getElementById('totalPrice').textContent = hambergerNum + colaNum;
+
 }
 
-count(10,2);
 
-// 匯率換算：台幣轉日幣
-function calculator(ntdDollar){
-    var jpDollar = ntdDollar * 0.27;
-    console.log(jpDollar);
-}
-
-calculator(10000);
-
-// 菜市場花費加總
-function marketCost(apple,milk,cookie){
-    var total = apple*20 + milk*30 + cookie*20;
-    console.log(total);
-}
-
-marketCost(3,2,1);

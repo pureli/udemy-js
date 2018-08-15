@@ -112,32 +112,74 @@
 // console.log(myTeacher);
 // console.log(mystudent);
 
-////////////壽星折扣案例//////////////////
+
+
+
+
+////////////壽星折扣案例///////////
 // 一、判斷生日
 // 第一種寫法
-var myBirth = 10;
-var thisMonth = 8;
-var chechBirth = function (){
-    if (myBirth == thisMonth){
-        document.getElementById('birthdayID').textContent = 'yes';
-    }
-    else{
-        document.getElementById('birthdayID').textContent = 'nope';
-    }
-}
-chechBirth();
-
-// 第二種寫法
 // var myBirth = 10;
 // var thisMonth = 8;
-// var checkBirth = myBirth == thisMonth;
+// var chechBirth = function (){
+//     if (myBirth == thisMonth){
+//         document.getElementById('birthdayID').textContent = 'yes';
+//     }
+//     else{
+//         document.getElementById('birthdayID').textContent = 'nope';
+//     }
+// }
+// chechBirth();
 
-// document.getElementById('birthdayID').textContent = checkBirth;
+// // 第二種寫法
+// // var myBirth = 10;
+// // var thisMonth = 8;
+// // var checkBirth = myBirth == thisMonth;
 
-// 二、判斷人數（問人數是否沒到齊）
-var nowPeople = 1;
-var totalPeople = 3;
-var checkPeople = nowPeople !== totalPeople;
+// // document.getElementById('birthdayID').textContent = checkBirth;
 
-document.getElementById('seatID').textContent = checkPeople;
+// // 二、判斷人數（問人數是否沒到齊）
+// var nowPeople = 1;
+// var totalPeople = 3;
+// var checkPeople = nowPeople !== totalPeople;
 
+// document.getElementById('seatID').textContent = checkPeople;
+
+
+
+
+////////////比較、邏輯運算///////////
+// 簡易案例：到便利商店取貨，店員要看證件（有一張即可）
+var isID = true;
+var isHealth = false;
+if(isID == true || isHealth == true){
+    console.log('ok, here is your stuff.');
+}else{
+    console.log('you can not pick.');
+}
+
+// 複雜案例：餐廳滿千、VIP判斷送贈品
+// 第一種寫法
+// var vipID = false;
+// var myCost = true;
+
+// if (vipID == true && myCost == true){
+//     document.getElementById('checkID').textContent = 'yes';
+// }else{
+//     document.getElementById('checkID').textContent = 'no';
+// }
+
+// if(vipID == true || myCost == true){
+//     document.getElementById('checkID2').textContent = 'yes';
+// }else{
+//     document.getElementById('checkID2').textContent = 'yes';
+// }
+
+// 第二種寫法
+var vipID = false;
+var myCost = true;
+var andCheck = vipID == true && myCost == true;
+var orCheck = vipID == true || myCost == true;
+
+document.getElementById('checkID').textContent = andCheck;
+document.getElementById('checkID2').textContent = orCheck;

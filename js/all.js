@@ -1,26 +1,29 @@
-// for ＋ if 練習：鼓勵專櫃業績達標
-var skm = 
+// for 數量加總練習：以農場香蕉數量為例
+var farms = 
 [
     {
-        name : '華哥爾內衣',
-        todaySale : 20000
+        farmer : 'Newyellow',
+        chick : 200,
+        banana : 1000
     },
     {
-        name : '蕾戴絲內衣',
-        todaySale : 15000
+        farmer : 'pure',
+        chick : 300,
+        banana : 2000
     },
     {
-        name : '莎薇內衣',
-        todaySale : 5000
+        farmer : 'Papa',
+        chick : 200,
+        banana : 5000
     }
 ]
 
-// 檢查品牌銷售業績
-for( var i = 0; i < skm.length ; i++){
-    // console.log(skm[i].todaySale);
-    if(skm[i].todaySale >= 12000){
-        console.log(skm[i].name+'達標，做得好喔！');
-    }
+// 第一種寫法
+console.log(farms[0].banana + farms[1].banana + farms[2].banana);
+
+// 第二種寫法
+var bananaTotal = 0;
+for( var i = 0; i < farms.length; i++){
+    bananaTotal = bananaTotal + farms[i].banana;
 }
-
-
+console.log(bananaTotal);

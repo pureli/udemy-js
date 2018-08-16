@@ -1,12 +1,38 @@
-// 高雄市政府 open data Json 練習
-var data = [{"author":"國中教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002555","target":"_blank"},"title":"高雄市107學年度一甲國中暨茄萣國中音樂類藝術才能班新生聯合鑑定書面審查鑑定結果公告","pubDate":"107-08-15"},{"author":"體衛保健科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002549","target":"_blank"},"title":"請儘速於107年8月30日前上網填報「107年度幼兒園托育人員流感疫苗意願調查表」以利作業順利。","pubDate":"107-08-14"},{"author":"體衛保健科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002548","target":"_blank"},"title":"檢送「本市學校類流感、腹瀉及水痘群聚通報規定」公告 及公告總說明各1份。","pubDate":"107-08-14"},{"author":"體衛保健科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002545","target":"_blank"},"title":"核定最新107年學校廚房管理人員「食品安全管制系統60A」教育訓練參加人員名單","pubDate":"107-08-13"},{"author":"資訊及國際教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002543","target":"_blank"},"title":"南科AI_ROBOT自造基地，推動國內智慧機器人產業，歡迎各機關預約參訪","pubDate":"107-08-13"},{"author":"社會教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002539","target":"_blank"},"title":"轉知路口汽機車禮讓文化宣導用語，請各校協助加強宣導。","pubDate":"107-08-13"},{"author":"國中教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002536","target":"_blank"},"title":"107學年第一學期國中本土語言(閩南語及客家語)開課經費各校填報情形公告","pubDate":"107-08-13"},{"author":"國中教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002535","target":"_blank"},"title":"高雄師範大學南部縣市國民中小學 推動十二年國教校訂課程研討會","pubDate":"107-08-13"},{"author":"國中教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002534","target":"_blank"},"title":"轉知臺灣海洋教育中心辦理「環太平洋海洋教育者國際研討會」暨「第一屆臺灣海洋教育者論壇」及全國中小學海洋教育觀摩與教師研習","pubDate":"107-08-13"},{"author":"國際教育資源中心","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002532","target":"_blank"},"title":"高雄市107年度國際教育種子教師培訓暨英國參訪人員錄取名單暨注意事項","pubDate":"107-08-12"},{"author":"國際教育資源中心","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002531","target":"_blank"},"title":"高雄市107年度國際教育種子教師培訓暨英國參訪人員錄取名單暨注意事項","pubDate":"107-08-11"},{"author":"特殊教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002519","target":"_blank"},"title":"高雄市政府教育局107年度第二次甄選約聘職能治療師甄選簡章","pubDate":"107-08-09"},{"author":"社會教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002513","target":"_blank"},"title":"本市107年語文競賽市賽報名至8月17日截止，請把握時間填報，俾維護競賽員權益。","pubDate":"107-08-07"},{"author":"高中職教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002505","target":"_blank"},"title":"轉知社團法人中華安得烈慈善協會教育推廣計畫","pubDate":"107-08-06"},{"author":"高中職教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002506","target":"_blank"},"title":"轉知教育部辦理「教育部跨文化大使講座系列第45場」，活動如說明，請查照。","pubDate":"107-08-06"},{"author":"體衛保健科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002504","target":"_blank"},"title":"轉知財團法人臺灣癌症基金會舉辦「蔬果彩虹579校園巡迴講座」，鼓勵各校踴躍預約申請講座","pubDate":"107-08-06"},{"author":"體衛保健科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002503","target":"_blank"},"title":"轉知中華民國魚菜共生推廣協會協助各級學校推行「環境教育與食農教育」計畫","pubDate":"107-08-06"},{"author":"社會教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002499","target":"_blank"},"title":"高雄市107年藝術教育貢獻獎初選結果","pubDate":"107-08-06"},{"author":"資訊及國際教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002497","target":"_blank"},"title":"教育局資訊服務入口網及局網暫停服務公告","pubDate":"107-08-06"},{"author":"國中教育科","attributes":{"url":"http://bulletin.kh.edu.tw/view.php?sn=B107002492","target":"_blank"},"title":"國立臺灣師範大學科學教育中心舉辦「下一個世代的科學實驗室工作坊 (Next Lab Worshop)」","pubDate":"107-08-03"}]
+// 練習 DOM
 
-console.log(data[0].author);
-console.log(data.length);
+// 一、動態塞文字
+// 第一種寫法
+var weatherAdj = document.querySelector('.weather em');
+weatherAdj.textContent = '晴朗';
+// 第二種寫法
+document.querySelector('.weather em').textContent = '棒棒';
 
-// 撈出authur是體衛健保科的標題
-for( var i = 0; i < data.length; i++){
-    if(data[i].authur == '體衛健保科'){
-        console.log(data[i].title);
-    }
-}
+
+
+// 二、動態增加 HTML 上的屬性
+// 練習一 動態增加（改變） HTML 上 href
+var loveSong = document.querySelector('.song a');
+loveSong.setAttribute('href','http://www.google.com');
+
+// 練習二 呈上
+var el = document.querySelector('.titleClass a');
+// **注意** setAttribute('屬性','塞值')
+el.setAttribute('href','http://www.google.com');
+
+// 練習三 動態加上 class
+// **注意** setAttribute('屬性','塞值')
+var flowerText = document.querySelector('.flower');
+flowerText.setAttribute('class','flowerColor');
+
+// 練習四 動態取值，如取出 href 
+var link = document.querySelector('.song a').getAttribute('href');
+console.log(link);
+
+// 練習五 動態取直，如取出文字
+var link = document.querySelector('.song a').textContent;
+console.log(link);
+
+// 另一種寫法
+var link = document.querySelector('.song a').innerHTML;
+console.log(link);
+ 

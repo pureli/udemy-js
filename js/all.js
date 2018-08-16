@@ -18,12 +18,22 @@ var farms =
     }
 ]
 
-// 第一種寫法
-console.log(farms[0].banana + farms[1].banana + farms[2].banana);
+// 假設超過100隻，就跟他買
+// 想要買100隻小雞，所以要確定誰的小雞數量夠
+    for( var i=0 ; i<farms.length ; i++){
+        if(farms[i].chick > 100){
+            console.log(farms[i].farmer +'的小雞數量夠');
 
-// 第二種寫法
-var bananaTotal = 0;
-for( var i = 0; i < farms.length; i++){
-    bananaTotal = bananaTotal + farms[i].banana;
-}
-console.log(bananaTotal);
+            //問如果買了100隻後，該農場主人還剩幾隻
+            // 第一種寫法
+            var chickTotal = farms[i].chick -100;
+            console.log(farms[i].farmer+'剩下'+chickTotal+'隻小雞');
+
+            // 第二種寫法
+            // farms[i].chick-=100;
+            // console.log(farms[i].farmer+'剩下'+farms[i].chick+'隻小雞');
+            break;
+        }
+       
+    }
+    

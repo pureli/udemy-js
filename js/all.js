@@ -1,40 +1,49 @@
-// 利用 createElement 在 html 上增加節點
-// 相較於innereHTML的優點為：利用 js 把東西都組好後，再放到 html 上
+// 練習ㄧ、按鈕觸發事件：有兩種寫法
+// 第一種寫法
+// 從此處開始
+// var button = document.querySelector('.btn');
 
-// 練習一、
-// 第一步：利用createElement增加html上的元素
-var loveFood = document.createElement('em');
+//  button.onclick = function(){
+//      alert('hello');
+// }
 
-// 第二步：利用js動態增加好內容
-loveFood.textContent = '蛋糕';
-// 或想增加樣式
-loveFood.setAttribute('class','foodColor');
-
-// 第三步：使用appendChild將以上節點掛在想要顯示的地方（位置會出現在最後面）
-document.querySelector('.food').appendChild(loveFood);
+// 第二種寫法：事件監聽(選擇事件,匿名function,false)
+// 從此處開始
+// button.addEventListener('click',function(){alert('新寫法')},false);
 
 
-// 練習createElement 與 for 運用
-// 挑戰：列出農夫的名字
-var farms = [
-    {
-        name: 'MapleFarm',
-        farmer: 'ArPu',
-        duck: 200
-    },
-    {
-        name: 'PapaFarm',
-        farmer: 'Papa',
-        duck: 300
-    }
-]
 
-// 解法：組好形式與內容後，賦予子節點秀在網頁上
-for( var i = 0; i < farms.length; i++){
-    // 如何呈現
-    var farmerList = document.createElement('li');
-    // 內容    
-    farmerList.textContent = farms[i].farmer;
-    // 秀出
-    document.querySelector('.farmerList').appendChild(farmerList);
-}
+
+//練習二、利用 addEventListener 綁定按鈕兩個事件
+//**注意**：使用 addEventListener 的好處是可以綁定好幾個事件，而 onclick 只能一個
+
+// 綁定按鈕一：監聽一個事件
+// 從此處開始
+// var button1 = document.querySelector('.btn1');
+// button1.addEventListener('click',function(){alert('我是按鈕一')},false);
+
+// 綁定按鈕二：連續監聽兩個事件
+// 從此處開始
+// var button2 = document.querySelector('.btn2');
+// button2.addEventListener('click',function(){alert('我是按鈕二')},false);
+// button2.addEventListener('click',function(){alert('按鈕二再次出現')},false);
+
+
+
+//練習三、說明 addEventListener 中，false、true 的差別
+// false --> 從指定元素往外層
+// true --> 從最外層找到指定元素
+// 舉例
+// 從此處開始
+// var boxBtn = document.querySelector('.box');
+// boxBtn.addEventListener('click',function()){alert('點到方塊囉');},false); 
+
+// var bodyBtn = document.querySelector('.bodyClass');
+// bodyBtn.addEventListener('click',function(){alert('你沒有點到方塊');},false);
+
+// **注意**如果要解決點到重複元素的問題，須另加一行語法
+var boxBtn = document.querySelector('.box');
+boxBtn.addEventListener('click',function(e){e.stopPropagation();alert('點到方塊囉');},false); 
+
+var bodyBtn = document.querySelector('.bodyClass');
+bodyBtn.addEventListener('click',function(){alert('你沒有點到方塊');},false);

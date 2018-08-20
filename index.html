@@ -7,25 +7,35 @@
     <title>Document</title>
 
     <style>
-
+        .rocket {
+            width: 20%;
+            position: absolute;
+            bottom: 0px;
+            transition: all 8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                                
+        }
+        
+        .rocket1 {
+            left: 0;
+            bottom: 0px;
+        }
+        .rocket2 {
+            left: 300px;
+            bottom: 0;
+        }
+        .rocket3 {
+            left: 600px;
+            bottom: 0;
+        }
     </style>
 </head>
-<body class="bodyClass">
-    <!-- 練習一、 -->
-    <!-- 任務：網拍網站，點左邊選單時，取消瀏覽器預設行為-->
-    <!-- <div style="margin-top: 1500px;">
-       <a class="menu" href="#">本週新品</a>
-    </div> -->
-
-    <!-- 練習二、 -->
-    <!-- 任務：選到下拉式選單，在下方秀出該農夫名字 -->
-    <select class="areaSelect" style="background-color:lightgrey">  
-        <option value="choose">請選擇</optin>
-        <option value="文山區">文山區</option>
-        <option value="信義區">信義區</option>
-        <option value="大安區">大安區</option>
-    </select>
-    <ul class="listFrom"></ul>
+<body background="img/bg.png">
+    <!-- 練習火箭發射 -->
+    <div>
+        <img src="img/rocket.png" class="rocket rocket1">
+        <img src="img/rocket.png" class="rocket rocket2">
+        <img src="img/rocket.png" class="rocket rocket3">
+    </div>
 
     <script src="js/all.js"></script>
 </body>

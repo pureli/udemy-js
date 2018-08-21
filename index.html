@@ -7,34 +7,44 @@
     <title>Document</title>
 
     <style>
-        .rocket {
-            width: 20%;
-            position: absolute;
-            bottom: 0px;
-            transition: all 8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                                
+        .mouseImg {
+            position: fixed;
         }
-        
-        .rocket1 {
-            left: 0;
-            bottom: 0px;
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
         }
-        .rocket2 {
-            left: 300px;
-            bottom: 0;
-        }
-        .rocket3 {
-            left: 600px;
-            bottom: 0;
+        .box2 {
+            margin-left: 800px;
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
         }
     </style>
 </head>
-<body background="img/bg.png">
-    <!-- 練習火箭發射 -->
-    <div>
-        <img src="img/rocket.png" class="rocket rocket1">
-        <img src="img/rocket.png" class="rocket rocket2">
-        <img src="img/rocket.png" class="rocket rocket3">
+<body background = "img/bg.png" style="height: 2800px; cursor: none">
+    <!-- 練習抓取screen、page、client 數值 -->
+    <div style="position: fixed">
+        <div style="text-align: center">
+        <span>screenX:<em class="screenX"></em></span>
+        <span>screenY:<em class="screenY"></em></span>
+        </div>
+        <div style="text-align: center">
+            <span>pageX:<em class="pageX"></em></span>
+            <span>pageY:<em class="pageY"></em></span>
+        </div>
+        <div style="text-align: center">
+            <span>clientX:<em class="clientX"></em></span>
+            <span>clientY:<em class="clientY"></em></span>
+        </div>
+        <!-- 放圖片 -->
+         <div>
+             <img src="img/ming.png" class="mouseImg">
+         </div>
+         <!-- 怪物 -->
+         <div class="box1"></div>
+         <div class="box2"></div>
     </div>
 
     <script src="js/all.js"></script>

@@ -1,23 +1,28 @@
-// 透過 JSON.parse 和 JSON.stringify 編譯資料
+// 新的 html 標籤：data-*（*為自訂名稱）
+// 透過 dataset 撈出並讀取自訂資料
 
-// 練習1.將 array 轉為 string
-// JSON.stringify()
+// 練習：點擊list上的資料時，秀出自訂資料
+// var listData = document.querySelector('.list li');
+//  function show(e){   
+//     var data1 = e.target.dataset.book;
+//     console.log('我總共有'+data1+'本書');
+// }
 
-// 練習2.將 string 轉為 array
-// JSON.parse()
-// 學以上兩點是因為 localStorage 只會保存 string 資料
+// 呈上，多重選擇練習：點擊list上的資料時，秀出自訂資料
+var listData = document.querySelectorAll('.list li');
+for(var i = 0; i<listData.length; i++){ 
+    listData[i].addEventListener('click',show,false);
+}
 
-// 此處開始
-var country = [{farmer: "Ema"}];
-// 第一步：先將陣 array 轉為 string
-var countryString = JSON.stringify(country);
-// 第二步：將資料存到 local storage
-localStorage.setItem('countryItem',countryString);
 
-// 若要取得陣列裡的資料
-// 第三步：取得 localStorage 資料
-var getData = localStorage.getItem('countryItem');
-// 第四步：先將 string 轉為 array
-var countryArray = JSON.parse(getData);
+function show(e){   
+    var data1 = e.target.dataset.book;
+    console.log('我總共有'+data1+'本書');
+}
 
-console.log(countryArray[0].farmer);
+
+// 其他多重選擇練習
+var text = document.querySelectorAll('.textContent');
+for( var i = 0; i<text.length; i++){
+text[i].textContent = 'hello'; 
+}

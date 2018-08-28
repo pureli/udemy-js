@@ -1,39 +1,12 @@
-// 練習：mouseover - 當滑鼠滑到指定內容時觸發觸發
-var screenX = document.querySelector('.screenX');
-var screenY = document.querySelector('.screenY');
+// 練習事件監聽 - 從父元素監聽子元素
+// 點li的東西，會顯示li裡面的文字內容
+var el = document.querySelector('.UL');
+el.addEventListener('click',show,false);
+function show(e){
+    // 因為只希望點擊li出現文字，若點擊ul則不出現
+    // reture 表示回傳空值，並且到此結束，不會執行接下來的程式碼
+    if(e.target.nodeName == 'UL'){return};
+    console.log(e.target.textContent);
+    // console.log(e.target.nodeName);
 
-var pageX = document.querySelector('.pageX');
-var pageY = document.querySelector('.pageY');
-
-var clientX = document.querySelector('.clientX');
-var clientY = document.querySelector('.clientY');
-
- // 滑鼠圖片
- var mouseImg = document.querySelector('.mouseImg');
-
-// 事件監聽
-
-function showFunc(e){
-    screenX.textContent = e.screenX;
-    screenY.textContent = e.screenY;
-    pageX.textContent = e.pageX;
-    pageY.textContent = e.pageY;
-    clientX.textContent = e.clientX;
-    clientY.textContent = e.clientY;
-    // 滑鼠圖片
-    mouseImg.style.left = e.clientX+'px';
-    mouseImg.style.top = e.clientY+'px';
 }
-
-var el= document.body;
-el.addEventListener('mousemove',showFunc,false);
-
-// 碰到怪物跳出訊息
-var box1 = document.querySelector('.box1');
-box1.addEventListener('mousemove',box,false);
-
-function box(){
-    alert('hello');
-}
-
-

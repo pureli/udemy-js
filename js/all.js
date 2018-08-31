@@ -1,28 +1,36 @@
-// 新的 html 標籤：data-*（*為自訂名稱）
-// 透過 dataset 撈出並讀取自訂資料
+var farms = 
+[
+    {
+        farmer: 'Papa'
+    },
+    {
+        farmer: 'Newyellow'
+    }
+]
 
-// 練習：點擊list上的資料時，秀出自訂資料
-// var listData = document.querySelector('.list li');
-//  function show(e){   
-//     var data1 = e.target.dataset.book;
-//     console.log('我總共有'+data1+'本書');
-// }
+var list = document.querySelector('.list');
 
-// 呈上，多重選擇練習：點擊list上的資料時，秀出自訂資料
-var listData = document.querySelectorAll('.list li');
-for(var i = 0; i<listData.length; i++){ 
-    listData[i].addEventListener('click',show,false);
+// 更新農場資料:動態產生資料在網頁上
+function updateList(){
+    var str = '';
+    for(var i = 0; i < farms.length; i++){
+        var farmer = farms[i].farmer;
+        // 在li裡加入num，用意為方便之後取出第幾個農夫，才可以叫出他的名字
+        str+='<li data-num="'+i+'">'+farmer+'</li>' 
+       
+        list.innerHTML = str;
+    }
 }
+updateList();
 
-
-function show(e){   
-    var data1 = e.target.dataset.book;
-    console.log('我總共有'+data1+'本書');
+// 點擊事件
+function checkList(e){
+    // 偵測目前點擊的東西是什麼
+    var num = e.target.nodeName;
+    if(num !== "LI"){return}
+    // return 可惟一個中斷點，不執行下面東西
+    // 編號
+    var str = e.target.dataset.num;
+    console.log('您現在選擇的農夫是'+farms[str].farmer);
 }
-
-
-// 其他多重選擇練習
-var text = document.querySelectorAll('.textContent');
-for( var i = 0; i<text.length; i++){
-text[i].textContent = 'hello'; 
-}
+list.addEventListener('click',checkList,false);

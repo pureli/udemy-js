@@ -5,6 +5,9 @@ var farms =
     },
     {
         farmer: 'Newyellow'
+    },
+    {
+        farmer: 'ArPu'
     }
 ]
 
@@ -23,14 +26,16 @@ function updateList(){
 }
 updateList();
 
-// 點擊事件
+// 點擊事件：確認點擊的農夫是誰
+// splice - 刪除 array 資料
 function checkList(e){
     // 偵測目前點擊的東西是什麼
-    var num = e.target.nodeName;
-    if(num !== "LI"){return}
+    var num = e.target.dataset.num;
+    if(e.target.nodeName !== "LI"){return}
     // return 可惟一個中斷點，不執行下面東西
     // 編號
-    var str = e.target.dataset.num;
-    console.log('您現在選擇的農夫是'+farms[str].farmer);
+    farms.splice(num,1);
+    updateList();
+    
 }
 list.addEventListener('click',checkList,false);

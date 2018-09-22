@@ -7,15 +7,45 @@
     <title>Document</title>
 
     <style>
+        .logo {
+            width: 50%;
+        }
+        .ud {
+            width: 35px;
+        }
     </style>
 </head>
-<body>
-    <!-- 註冊表單 -->
-    帳號
-    <input type="text" class="account"><br/>
-    密碼
-    <input type="password" class="password"><br/>
-    <input type="button" class="send" value="送出">
+<!-- style="background-image:url( ' img/bg/bg2.jpg ' );" -->
+<!-- https://media.giphy.com/media/1RxlWYJ5hMYbS/giphy.gif -->
+<!-- https://media.giphy.com/media/Yy26NRbpB9lDi/giphy.gif -->
+<body  style="background:url( ' https://media.giphy.com/media/Yy26NRbpB9lDi/giphy.gif ' );no-repeat center center fixed; 
+background-size: cover; ">
+    <div style="text-align: center; margin-top: 100px">
+        <img src="img/ding/ding_logo.png" class="logo">
+        <div>
+            <div>
+                <img src="img/ding/ding_UD.png" class="ud">
+                姓名
+                <input type="text" class="name">
+            </div>
+            <br/>
+            <div>
+                <img src="img/ding/ding_UD.png" class="ud">
+                帳號
+                <input type="text" class="account">
+            </div>    
+            <br/>
+            <div>
+                <img src="img/ding/ding_UD.png" class="ud">
+                密碼
+                <input type="password" class="password">
+            </div>
+            <br/>
+            <input type="button" value="送出" class="send">
+
+        </div>
+    </div>
+
 
     <script src="js/all.js"></script>
 </body>
